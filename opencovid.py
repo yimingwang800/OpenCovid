@@ -9,6 +9,15 @@ def millions(x, pos):
     #return f'{x/1000000:,}'
     return '{:,}'.format(x/1000000)
 
+# Variable vs          Data Structure (Collection of the data)
+# x = 1                List (Array, Vector, Queue, Stack, etc.)
+# Data Type:           JSON
+# Int                  Dictionary
+# Char                 Data Frame in Panda
+# String 
+# Bool
+# Float or Double
+
 def region_summary():
     df = pd.read_csv('Cases.csv')
     print(df)
@@ -45,7 +54,7 @@ def region(province):
         rot=45,
         legend = False
     )
-    ax.set_title('Cases in Province', fontsize=16)
+    ax.set_title(f'Cases in {province}', fontsize=16)
     ax.set_xlabel('Date', fontsize=14)
     ax.set_ylabel('Cases (Million)', fontsize=14)
     ax.yaxis.set_major_formatter(thousands)
@@ -53,9 +62,8 @@ def region(province):
     plt.show()
 
 
-#region_summary()
 region(province = "QC")
-#region("AB")
+
 
  
 # url = 'https://api.opencovid.ca/summary'
